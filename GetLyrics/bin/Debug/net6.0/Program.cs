@@ -2,8 +2,7 @@
 using System.Text.Json.Nodes;
 using Newtonsoft.Json;
 using GetLyrics;
-
-
+using Newtonsoft.Json.Linq;
 
 string troubleTaylorSwift = "72jCZdH0Lhg93z6Z4hBjgj";
 string antiheroTaylorSwift = "0V3wPSX9ygBnCm8psDIegu";
@@ -15,7 +14,7 @@ string songName = "";
 
 
 
-var Songs = new string[] { "Trouble", "Anti-Hero", "Blank-Space", "Love Story", "Bad Blood"};
+var Songs = new string[] { "Trouble", "Anti-Hero", "Blank-Space", "Love Story", "Bad Blood" };
 Console.WriteLine("Which of these songs would you like the lyrics to?");
 
 for (int i = 0; i < Songs.Length; i++)
@@ -32,7 +31,14 @@ switch (input)
     case 2:
         songName = antiheroTaylorSwift;
         break;
-    default:
+    case 3:
+        songName = blankspaceTaylorSwift;
+        break;
+    case 4:
+        songName = badbloodTaylorSwift;
+        break;
+    case 5:
+        songName = lovestoryTaylorSwift;
         break;
 }
 
@@ -62,20 +68,20 @@ using (var response = await client.SendAsync(request))
     response.EnsureSuccessStatusCode();
     var body = await response.Content.ReadAsStringAsync();
     Console.WriteLine(body); // Debugging statement to print the raw JSON response
-    try
-    {
-        Lyrics lyrics = JsonConvert.DeserializeObject<Lyrics>(body);
-        Line[] linez = lyrics.lines;
-        foreach (var item in linez)
-        {
-            Console.WriteLine(item.words);
-        }
-        //Console.WriteLine(linez + "Is this working?"); // Prints only the lyrics property
-        //Console.WriteLine(lyrics.syncType);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Error deserializing JSON: " + ex.Message);
-    }
+
+
+
+
+    Console.WriteLine(LyricParser.Parser(body));
+
+    //Lyrics lyrics = JsonConvert.DeserializeObject<Lyrics>(body);
+    //Line[] linez = lyrics.lines;
+    //foreach (var item in linez)
+    //{
+    //    Console.WriteLine(item.words);
+    //}
+    //Console.WriteLine(linez + "Is this working?"); // Prints only the lyrics property
+    //Console.WriteLine(lyrics.syncType);
+
 }
 

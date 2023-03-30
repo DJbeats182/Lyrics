@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bloov\\Desktop\\repos\\GetLyrics\\GetLyrics\\GetLyrics.csproj": {}
+    "C:\\Users\\spike\\source\\repos\\MyRepos\\Lyrics\\GetLyrics\\GetLyrics.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bloov\\Desktop\\repos\\GetLyrics\\GetLyrics\\GetLyrics.csproj": {
+    "C:\\Users\\spike\\source\\repos\\MyRepos\\Lyrics\\GetLyrics\\GetLyrics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bloov\\Desktop\\repos\\GetLyrics\\GetLyrics\\GetLyrics.csproj",
+        "projectUniqueName": "C:\\Users\\spike\\source\\repos\\MyRepos\\Lyrics\\GetLyrics\\GetLyrics.csproj",
         "projectName": "GetLyrics",
-        "projectPath": "C:\\Users\\bloov\\Desktop\\repos\\GetLyrics\\GetLyrics\\GetLyrics.csproj",
-        "packagesPath": "C:\\Users\\bloov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bloov\\Desktop\\repos\\GetLyrics\\GetLyrics\\obj\\",
+        "projectPath": "C:\\Users\\spike\\source\\repos\\MyRepos\\Lyrics\\GetLyrics\\GetLyrics.csproj",
+        "packagesPath": "C:\\Users\\spike\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\spike\\source\\repos\\MyRepos\\Lyrics\\GetLyrics\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bloov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\spike\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,16 +59,35 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.1.23115.2\\RuntimeIdentifierGraph.json"
         }
       }
     }
