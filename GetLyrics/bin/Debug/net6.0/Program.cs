@@ -6,15 +6,13 @@ using Newtonsoft.Json.Linq;
 
 string troubleTaylorSwift = "72jCZdH0Lhg93z6Z4hBjgj";
 string antiheroTaylorSwift = "0V3wPSX9ygBnCm8psDIegu";
-string blankspaceTaylorSwift = "7flrjP7Dag40j2Fw8TX4iC";
-string lovestoryTaylorSwift = "7flrjP7Dag40j2Fw8TX4iC";
-string badbloodTaylorSwift = "7flrjP7Dag40j2Fw8TX4iC";
+string blankspaceTaylorSwift = "1p80LdxRV74UKvL8gnD7ky";
 string songName = "";
 
 
 
 
-var Songs = new string[] { "Trouble", "Anti-Hero", "Blank-Space", "Love Story", "Bad Blood" };
+var Songs = new string[] { "Trouble", "Anti-Hero", "Blank-Space"};
 Console.WriteLine("Which of these songs would you like the lyrics to?");
 
 for (int i = 0; i < Songs.Length; i++)
@@ -34,23 +32,20 @@ switch (input)
     case 3:
         songName = blankspaceTaylorSwift;
         break;
-    case 4:
-        songName = badbloodTaylorSwift;
-        break;
-    case 5:
-        songName = lovestoryTaylorSwift;
-        break;
+  
 }
 
 
 var client = new HttpClient();
+string apikey = File.ReadAllText("appsettings2.json");
+var key = JObject.Parse(apikey).GetValue("DefaultKey").ToString();
 var request = new HttpRequestMessage
 {
     Method = HttpMethod.Get,
     RequestUri = new Uri($"https://spotify23.p.rapidapi.com/track_lyrics/?id={songName}"),
     Headers =
     {
-        { "X-RapidAPI-Key", "d37724f31amsh5b7b473995b9699p1dd08djsn1424a0334a39" },
+        { "X-RapidAPI-Key", key },
         { "X-RapidAPI-Host", "spotify23.p.rapidapi.com" },
     },
 };
@@ -66,8 +61,8 @@ var request = new HttpRequestMessage
 using (var response = await client.SendAsync(request))
 {
     response.EnsureSuccessStatusCode();
-    var body = await response.Content.ReadAsStringAsync();
-    Console.WriteLine(body); // Debugging statement to print the raw JSON response
+   var body = await response.Content.ReadAsStringAsync();
+   // Console.WriteLine(body); // Debugging statement to print the raw JSON response
 
 
 
@@ -82,6 +77,7 @@ using (var response = await client.SendAsync(request))
     //}
     //Console.WriteLine(linez + "Is this working?"); // Prints only the lyrics property
     //Console.WriteLine(lyrics.syncType);
+    Console.ReadLine();
 
 }
 
